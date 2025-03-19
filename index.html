@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mason Project</title>
   <meta name="title" content="Mason Project">
-  <meta name="description" content="Mason Project is an exploit created by Blobby Boi with the goal of being the successor to ExtHang3r. The exploit recreates the behavior of the LTMEAT Print method by flooding iframes and then printing the page. For whatever reason, printing a page with a ton of iframes hangs the embedded page rather than the page who embedded it. This is exactly what Mason Project exploits, since it also works with extension pages (as long they are under web_accessible_resources). This seems to be much more consistent than other extension-freezing methods, and it also lasts for a longer period of time.">
+  <meta name="description" content="Mason Project is an exploit created by Blobby Boi with the goal of being the successor to ExtHang3r. The exploit recreates the behavior of the LTMEAT Print method by flooding iframes and then printing the page. For whatever reason, printing a page with a ton of iframes hangs the embedded page rather than the page who embedded it. This is exactly what Mason Project exploits, since it also works with extension pages (as long as they are under web_accessible_resources). This seems to be much more consistent than other extension-freezing methods, and it also lasts for a longer period of time.">
   <meta name="keywords" content="school blocker bypass, bypasser, bypass school, bypass blocker, securly bypass, goguardian bypass, hapara bypass, lightspeed bypass, lightspeed filter agent bypass, school unblocker, school blocker, unblocker, ext-remover, exthang3r, blobby-boi, ltmeat, ltbeef">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
@@ -22,9 +22,7 @@
   
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght:@400;&display=swap');
-    * {
-      font-family: "Roboto", arial;
-    }
+    * { font-family: "Roboto", arial; }
     body {
       background-color: #1e1f22;
       color: white;
@@ -69,14 +67,8 @@
       padding-left: 50px;
       margin-left: -50px;
     }
-    .side-panel .option:hover {
-      background-color: #38393b;
-      color: white;
-    }
-    .side-panel .option.selected {
-      background-color: #8ab4f8;
-      color: black;
-    }
+    .side-panel .option:hover { background-color: #38393b; color: white; }
+    .side-panel .option.selected { background-color: #8ab4f8; color: black; }
     .side-panel footer {
       margin-top: auto;
       text-align: center;
@@ -84,16 +76,9 @@
       font-size: 14px;
       color: #c4c7c5;
     }
-    .side-panel footer a {
-      color: #9dbae9;
-    }
-    .side-panel footer a:hover {
-      text-decoration: underline;
-    }
-    .main-content {
-      flex-grow: 1;
-      padding: 20px;
-    }
+    .side-panel footer a { color: #9dbae9; }
+    .side-panel footer a:hover { text-decoration: underline; }
+    .main-content { flex-grow: 1; padding: 20px; }
     .extension-container {
       margin-left: 12px;
       margin-bottom: 12px;
@@ -117,19 +102,9 @@
       gap: 8px;
       justify-content: flex-end;
     }
-    .extension-name {
-      font-size: 13px;
-      color: white;
-    }
-    .extension-id {
-      font-size: 13px;
-      color: #c4c7c5;
-      margin-left: 10px;
-    }
-    .extension-container img {
-      width: 40px;
-      height: 40px;
-    }
+    .extension-name { font-size: 13px; color: white; }
+    .extension-id { font-size: 13px; color: #c4c7c5; margin-left: 10px; }
+    .extension-container img { width: 40px; height: 40px; }
     button {
       background: transparent;
       color: #9dbae9;
@@ -144,29 +119,17 @@
       transition: background 0.2s ease-in-out;
       outline: none;
     }
-    button:hover {
-      background: #38393b;
-    }
-    a {
-      color: #9dbae9;
-    }
-    h3 {
-      margin-left: 35px;
-      color: white;
-      margin-top: 20px;
-    }
+    button:hover { background: #38393b; }
+    a { color: #9dbae9; }
+    h3 { margin-left: 35px; color: white; margin-top: 20px; }
     #div-container {
       display: flex;
       flex-wrap: wrap;
       margin-left: 20px;
       width: calc(100% - 20px);
     }
-    #about-tab, #settings-tab {
-      margin-left: 50px;
-    }
-    #printer-tab {
-      margin-left: 10px;
-    }
+    #about-tab, #settings-tab { margin-left: 50px; }
+    #printer-tab { margin-left: 10px; }
     .ripple {
       position: absolute;
       border-radius: 100%;
@@ -176,10 +139,7 @@
       pointer-events: none;
     }
     @keyframes ripple-animation {
-      to {
-        transform: scale(2);
-        opacity: 0;
-      }
+      to { transform: scale(2); opacity: 0; }
     }
     .switch {
       position: relative;
@@ -188,18 +148,11 @@
       height: 20px;
       margin-left: 10px;
     }
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
+    .switch input { opacity: 0; width: 0; height: 0; }
     .slider {
       position: absolute;
       cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background-color: #444746;
       border-radius: 15px;
       border: 1.5px solid #8e918f;
@@ -217,9 +170,7 @@
       border-radius: 50%;
       transition: transform 0.1s ease-in-out, background-color 0.1s ease-in-out;
     }
-    .switch:hover .slider:before {
-      box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
-    }
+    .switch:hover .slider:before { box-shadow: 0 0 6px rgba(255, 255, 255, 0.5); }
     input:checked + .slider {
       background-color: #a8c7fa;
       border-color: #a8c7fa;
@@ -228,9 +179,7 @@
       transform: translate(12px, -50%);
       background-color: #062e6f;
     }
-    #dev-settings {
-      margin-top: 15px;
-    }
+    #dev-settings { margin-top: 15px; }
     #iframe-count {
       margin-top: 15px; 
       margin-left: 10px;
@@ -253,15 +202,9 @@
       cursor: pointer;
       transition: transform 0.1s ease-in-out, background-color 0.1s ease-in-out;
     }
-    #iframe-count:hover::-webkit-slider-thumb {
-      box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
-    }
-    #iframe-count:active::-webkit-slider-thumb {
-      background: #a8c7fa;
-    }
-    .contributor {
-      margin-right: 5px;
-    }
+    #iframe-count:hover::-webkit-slider-thumb { box-shadow: 0 0 6px rgba(255, 255, 255, 0.5); }
+    #iframe-count:active::-webkit-slider-thumb { background: #a8c7fa; }
+    .contributor { margin-right: 5px; }
     .contributor>img {
       width: 55px;
       border-radius: 100%;
@@ -271,8 +214,7 @@
     /* Futuristic Password Overlay Styles */
     #password-overlay {
       position: fixed;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       width: 100vw;
       height: 100vh;
       background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
@@ -311,9 +253,7 @@
       cursor: pointer;
       transition: background 0.2s ease-in-out;
     }
-    .password-container button:hover {
-      background: #0cc;
-    }
+    .password-container button:hover { background: #0cc; }
   </style>
 </head>
 <body>
@@ -335,7 +275,9 @@
     <div class="option" data-name="settings-tab">Settings</div>
     <div class="option" data-name="about-tab">About</div>
     <div style="border-top: 1px solid #444; margin-top: 10px; padding-top: 10px; width: 100%;"></div>
-    <p style="text-align: center; margin-left: -10px; user-select: none;">Made by <a href="https://docs.google.com/presentation/d/1BFNt1MrENHAMDmjEorfWmrJkqaLh-qniHyt8W7ylNEk/edit#slide=id.g34143ba59dc_0_0" target="_blank">Mason Burns</a></p>
+    <p style="text-align: center; margin-left: -10px; user-select: none;">
+      Made by <a href="https://docs.google.com/presentation/d/1BFNt1MrENHAMDmjEorfWmrJkqaLh-qniHyt8W7ylNEk/edit#slide=id.g34143ba59dc_0_0" target="_blank">Mason Burns</a>
+    </p>
   </div>
   <div class="main-content">
     <div id="printer-tab">
@@ -344,7 +286,13 @@
     </div>
     <div id="about-tab" style="display: none;">
       <h2 style="user-select: none;">About Masons Tool</h2>
-      <p style="user-select: none; line-height: 1.5;"><b></b> is an exploit created by <a href="https://docs.google.com/presentation/d/1BFNt1MrENHAMDmjEorfWmrJkqaLh-qniHyt8W7ylNEk/edit#slide=id.g34143ba59dc_0_0" target="_blank">Mason Burns</a> with the goal of being the successor to <b>Masons Tools</b>. The exploit recreates the behavior of the <b>LTMEAT Print</b> method by flooding iframes and then printing the page. For whatever reason, printing a page with a ton of iframes hangs the embedded page rather than the page who embedded it. This is exactly what Mason Project exploits, since it also works with extension pages (as long as they are under web_accessible_resources). This seems to be much more consistent than other extension-freezing methods, and it also lasts for a longer period of time.</p>
+      <p style="user-select: none; line-height: 1.5;">
+        <b></b> is an exploit created by 
+        <a href="https://docs.google.com/presentation/d/1BFNt1MrENHAMDmjEorfWmrJkqaLh-qniHyt8W7ylNEk/edit#slide=id.g34143ba59dc_0_0" target="_blank">
+          Mason Burns
+        </a> 
+        with the goal of being the successor to <b>Masons Tools</b>. The exploit recreates the behavior of the <b>LTMEAT Print</b> method by flooding iframes and then printing the page. For whatever reason, printing a page with a ton of iframes hangs the embedded page rather than the page who embedded it. This is exactly what Mason Project exploits, since it also works with extension pages (as long as they are under web_accessible_resources). This seems to be much more consistent than other extension-freezing methods, and it also lasts for a longer period of time.
+      </p>
       <div style="border-top: 1px solid #444; margin-bottom: 10px; margin-top: 20px; padding-top: 10px; width: 100%;"></div>
       <div id="contributor-content" style="display:none;">
         <h3 style="margin-left: 5px">Helpers</h3>
@@ -367,6 +315,7 @@
       </div>
     </div>
   </div>
+  
   <script>
     // Existing functionality script...
     document.addEventListener("DOMContentLoaded", function () {
@@ -381,23 +330,23 @@
       });
     });
     
-    let optionButtons = document.querySelectorAll(".option")
+    let optionButtons = document.querySelectorAll(".option");
     function HideAll(){
-      optionButtons.forEach(button=>{
-        let dataName = button.getAttribute("data-name")
+      optionButtons.forEach(button => {
+        let dataName = button.getAttribute("data-name");
         document.getElementById(dataName).style.display = "none";
         button.classList.remove("selected");
-      })
+      });
     }
-    optionButtons.forEach((button)=>{
-      let dataName = button.getAttribute("data-name")
+    optionButtons.forEach((button) => {
+      let dataName = button.getAttribute("data-name");
       let thisButton = button;
-      button.addEventListener("click", ()=>{
-        HideAll()
+      button.addEventListener("click", () => {
+        HideAll();
         document.getElementById(dataName).style.display = "block";
         thisButton.classList.add("selected");
-      })
-    })
+      });
+    });
     
     document.getElementById("show-all-extensions").addEventListener("change", function () {
       extContainer.innerHTML = "";
@@ -573,9 +522,9 @@
       }
     }
     
-    const iframeCountEl = document.querySelector("#iframe-count")
-    iframeCountEl.addEventListener("input", ()=>{
-      document.querySelector("#iframe-count-display").textContent = iframeCountEl.value
+    const iframeCountEl = document.querySelector("#iframe-count");
+    iframeCountEl.addEventListener("input", () => {
+      document.querySelector("#iframe-count-display").textContent = iframeCountEl.value;
     });
     
     function createIframesAndPrint(extPage, extIcon) {
@@ -706,12 +655,8 @@
       x.style.lineHeight = "32px";
       x.style.textAlign = "center";
       x.style.display = "inline-block";
-      x.onmouseover = () => {
-        x.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
-      };
-      x.onmouseout = () => {
-        x.style.backgroundColor = "transparent";
-      };
+      x.onmouseover = () => { x.style.backgroundColor = "rgba(255, 255, 255, 0.1)"; };
+      x.onmouseout = () => { x.style.backgroundColor = "transparent"; };
       x.onclick = () => document.body.removeChild(overlay);
       header.appendChild(leftSection);
       header.appendChild(x);
@@ -738,9 +683,7 @@
       overlay.onclick = (event) => {
         if (event.target === overlay) {
           popup.style.transform = "scale(1.03)";
-          setTimeout(() => {
-            popup.style.transform = "scale(1)";
-          }, 200);
+          setTimeout(() => { popup.style.transform = "scale(1)"; }, 200);
         }
       };
       popup.appendChild(header);
@@ -751,46 +694,52 @@
     }
     
     async function GetContributorData(){
-      let contributors = await (await fetch("https://api.github.com/repos/Blobby-Boi/ExtPrint3r/contributors")).json()
-      return contributors
+      let contributors = await (await fetch("https://api.github.com/repos/Blobby-Boi/ExtPrint3r/contributors")).json();
+      return contributors;
     }
-    const contributorList = document.querySelector("#contributor-list")
+    const contributorList = document.querySelector("#contributor-list");
     async function DisplayContributors(){
-      let contributors = await GetContributorData()
+      let contributors = await GetContributorData();
       for(let contributor of contributors){
-        console.log(contributor.avatar_url, contributor.html_url, contributor.login)
-        let a = document.createElement("a")
-        a.href = contributor.html_url
-        a.classList.add("contributor")
-        let img = document.createElement("img")
-        img.src = contributor.avatar_url
-        a.appendChild(img)
-        contributorList.appendChild(a)
+        console.log(contributor.avatar_url, contributor.html_url, contributor.login);
+        let a = document.createElement("a");
+        a.href = contributor.html_url;
+        a.classList.add("contributor");
+        let img = document.createElement("img");
+        img.src = contributor.avatar_url;
+        a.appendChild(img);
+        contributorList.appendChild(a);
       }
-      document.querySelector("#contributor-content").style.display = "block"
+      document.querySelector("#contributor-content").style.display = "block";
     }
     DisplayContributors();
   </script>
   
-  <!-- Password overlay script -->
+  <!-- Password overlay script with persistent unlock -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const passwordInput = document.getElementById("password-input");
-      const passwordSubmit = document.getElementById("password-submit");
-      
-      passwordSubmit.addEventListener("click", function(){
-        if(passwordInput.value === "Masonjburns131966"){
-          document.getElementById("password-overlay").style.display = "none";
-        } else {
-          alert("Incorrect password!");
-        }
-      });
-      
-      passwordInput.addEventListener("keypress", function(e) {
-        if(e.key === "Enter"){
-          passwordSubmit.click();
-        }
-      });
+      // If the user has already entered the correct password in a previous session, hide the overlay.
+      if(localStorage.getItem("masonUnlocked") === "true"){
+        document.getElementById("password-overlay").style.display = "none";
+      } else {
+        const passwordInput = document.getElementById("password-input");
+        const passwordSubmit = document.getElementById("password-submit");
+        
+        passwordSubmit.addEventListener("click", function(){
+          if(passwordInput.value === "Masonjburns131966"){
+            localStorage.setItem("masonUnlocked", "true");
+            document.getElementById("password-overlay").style.display = "none";
+          } else {
+            alert("Incorrect password!");
+          }
+        });
+        
+        passwordInput.addEventListener("keypress", function(e) {
+          if(e.key === "Enter"){
+            passwordSubmit.click();
+          }
+        });
+      }
     });
   </script>
 </body>
